@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "tbbboutdb": {
+    "url": "postgres://doadmin:o138gcwj7nwzzz89@tbbbout-db-postgresql-nyc1-66077-do-user-4139643-0.db.ondigitalocean.com:25060/tbbbout-staging?sslmode=require",
+    "name": "tbbboutdb",
+    "database": "tbbbout-staging",
+    "connector": "postgresql",
+    "ssl": true
+  }
+}

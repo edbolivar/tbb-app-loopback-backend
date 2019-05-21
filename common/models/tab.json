@@ -1,0 +1,44 @@
+{
+  "name": "tab",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": false
+    },
+    "createdAt": {
+      "type": "date",
+      "default": "$now"
+    },
+    "updatedAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "business": {
+      "type": "belongsTo",
+      "model": "business",
+      "foreignKey": "businessId"
+    },
+    "customer": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "employee": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

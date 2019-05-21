@@ -1,0 +1,69 @@
+{
+  "name": "business",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+  },
+  "properties": {
+    "businessName": {
+      "type": "string",
+      "required": true
+    },
+    "streetAddress": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "zipCode": {
+      "type": "string",
+      "required": true
+    },
+    "taxId": {
+      "type": "string",
+      "required": true
+    },
+    "businessPhone": {
+      "type": "string"
+    },
+    "acceptedConsent": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "employees": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "employeeBusinessId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "tabs": {
+      "type": "hasMany",
+      "model": "tab",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

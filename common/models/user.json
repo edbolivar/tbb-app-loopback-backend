@@ -1,0 +1,95 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+  },
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "phoneVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "paymentConfirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailConsent": {
+      "type": "boolean",
+      "default": false
+    },
+    "enteredBusinessInfo": {
+      "type": "boolean",
+      "default": false
+    },
+    "usersInvited": {
+      "type": "boolean",
+      "default": false
+    },
+    "paymentDisclaimerAccepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "acceptedTermsOfService": {
+      "type": "boolean",
+      "default": false
+    },
+    "pin": {
+      "type": "string"
+    },
+    "bankAccountToken": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "default": "customer"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customerTabs": {
+      "type": "hasMany",
+      "model": "tab",
+      "foreignKey": "customerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "employeeTabs": {
+      "type": "hasMany",
+      "model": "tab",
+      "foreignKey": "employeeId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "business": {
+      "type": "hasOne",
+      "model": "business",
+      "foreignKey": "ownerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "employeeBusiness": {
+      "type": "belongsTo",
+      "model": "business",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

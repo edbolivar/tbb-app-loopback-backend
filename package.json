@@ -1,0 +1,46 @@
+{
+  "name": "tbbbout-backend",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start:prod": "pm2 start ecosystem.config.js --env development",
+    "stop:prod": "pm2 stop ecosystem.config.js --env development",
+    "start": "nodemon node .",
+    "posttest": "npm run lint",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ../patrons-ui/sdk"
+  },
+  "dependencies": {
+    "@mean-expert/loopback-component-realtime": "^1.0.2",
+    "@mean-expert/loopback-sdk-builder": "^2.3.1",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-mongodb": "^3.9.2",
+    "loopback-connector-postgresql": "^3.6.0",
+    "mailchimp-api-v3": "^1.13.0",
+    "plaid": "^2.10.0",
+    "request": "^2.88.0",
+    "serve-favicon": "^2.0.1",
+    "stripe": "^6.26.1",
+    "strong-error-handler": "^3.0.0",
+    "twilio": "^3.29.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nodemon": "^1.18.10"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "tbbbout-backend"
+}
