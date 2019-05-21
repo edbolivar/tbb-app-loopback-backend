@@ -1,12 +1,12 @@
 'use strict';
 const request = require('request');
 const endpoint = 'https://api.authy.com/protected/json/phones/verification';
-const apiKey = 'LEsGkY0c2uPskngVNIjjfFFxURXTAAUO';
+const apiKey = '';
 // const stripe = require('stripe')('pk_live_sgS1RlkHPrXFwsrGCulyv6X2');
 const stripe = require('stripe')('sk_test_E9PIsa9IF9AMu6Vdhz23JaES');
 var Mailchimp = require('mailchimp-api-v3')
 
-var mailchimp = new Mailchimp("056d72ee69ecaede83708ecdb94bae3f-us20");
+var mailchimp = new Mailchimp("");
 module.exports = function(User) {
   User.observe('before save', (ctx, next) => {
     const now = new Date();
